@@ -44,8 +44,6 @@ const AddFirm = () => {
                 return;
 
             }
-
-
             const formData = new FormData();
             formData.append('firmName', firmName);
             formData.append('area', area);
@@ -90,6 +88,12 @@ const AddFirm = () => {
                 console.error("Error:", data.message || "Unknown error");
                 alert("Something went wrong. Try again later.");
             }
+            const mango = data.firmId;
+            const vendorRestuarant = data.vendorFirmName
+
+            localStorage.setItem('firmId', mango);
+            localStorage.setItem('firmName', vendorRestuarant)
+            window.location.reload()
             
         } catch (error) {
             console.error("Failed to add Firm:", error);
