@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect} from 'react'
-import NavBar from '../components/NavBar'
-import SideBar from '../components/SideBar'
+import NavBar from '../components/Navbar'
+import SideBar from '../components/Sidebar'
 import Login from '../components/forms/Login'
 import Register from '../components/forms/Register'
 import AddFirm from '../components/forms/AddFirm'
