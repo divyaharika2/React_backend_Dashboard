@@ -24,14 +24,16 @@ const AllProducts = () => {
 
     const deleteProductById = async(productId)=>{
                 try {
-                        const response = await fetch(`${API_URL}/product/${productId}`,{
-                            method: 'DELETE'
-                        })
-                    if(response.ok){
-                        setProducts(products.filter(product =>product._id !== productId));
-                        confirm("are you sure, you want to delete?")
-                        alert("Product deleted Successfully")
-                    }
+      const confirmDelete = window.confirm('Are you sure you want to delete?');
+      if (!confirmDelete) return;
+
+      const response = await fetch(`${API_URL}/product/${productId}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        setProducts(products.filter((product) => product._id !== productId));
+        alert('Product deleted Successfully');
+      }
                 } catch (error) {
                     console.error('Failed to delete product');
                     alert('Failed to delete product')
@@ -44,6 +46,7 @@ const AllProducts = () => {
         {products.length === 0 ? (
             <p>No products added</p>
         ) : (
+        <div className="table-responsive">
             <table className="product-table">
                 <thead>
                     <tr>
@@ -79,6 +82,7 @@ const AllProducts = () => {
                     })}
                 </tbody>
             </table>
+        </div>
          )}
     </div>
   )
