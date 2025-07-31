@@ -81,7 +81,6 @@ const AddProduct = () => {
         setImage(null);
         setDescription("");
         setMessage("Product added successfully!");
-         window.location.reload()
       } else {
         setMessage(data.message || "Failed to add product. Please try again.");
       }
