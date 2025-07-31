@@ -73,7 +73,6 @@ const AddProduct = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("Product added successfully!");
         // Reset form fields
         setProductName("");
         setPrice("");
@@ -81,6 +80,8 @@ const AddProduct = () => {
         setBestSeller(false);
         setImage(null);
         setDescription("");
+        setMessage("Product added successfully!");
+         window.location.reload()
       } else {
         setMessage(data.message || "Failed to add product. Please try again.");
       }

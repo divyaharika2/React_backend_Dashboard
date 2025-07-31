@@ -86,6 +86,7 @@ const showFirmHandler = ()=>{
   }else{
     alert("please login");
     setShowLogin(true)
+    setShowRegister(false)
   }
 }
 const showProductHandler = ()=>{
@@ -99,6 +100,7 @@ const showProductHandler = ()=>{
     }else{
         alert("please login")
         setShowLogin(true)
+        setShowRegister(false)
     }
 
 }
@@ -123,6 +125,7 @@ const showAllProductsHandler = ()=>{
 }else{
     alert("please login")
     setShowLogin(true)
+    setShowRegister(false)
  }
 }
   return (

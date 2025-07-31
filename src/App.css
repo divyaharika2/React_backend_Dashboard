@@ -10,7 +10,7 @@ body{
 /* ************NAV_BAR************* */
 .navSection {
   background-color: #ffffff;
-  background: linear-gradient(135deg, #071727, #51708f);
+  background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
   border-bottom: 1px solid #dcdcdc;
   padding: 15px 30px;
   display: flex;
@@ -24,17 +24,17 @@ body{
 .company {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
 }
 .userAuth {
   display: flex;
   gap: 8px;
   font-size: 1rem;
-  color: #34495e;
+  color: #000000;
 }
 .separator {
   pointer-events: none;
-  color: #aaa;
+  color: #672525;
 }
 
 .userAuth span {
@@ -53,9 +53,9 @@ body{
 
 .sideBarSection {
   width: 220px;
-  height: 94.3vh;
-  background: linear-gradient(135deg, #2c3d4d, #51708f);
-  padding: 20px 10px;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
+  padding: 20px 35px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   font-family: 'Segoe UI', sans-serif;
 }
@@ -135,8 +135,8 @@ body{
 }
 
 .btnSubmit button {
-  background-color: #1abc9c;
-  color: #fff;
+  background-color: #747d7c;
+  color: #000000;
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
@@ -243,7 +243,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2c3e50; /* dark blue-gray background */
+ background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
   font-family: Arial, Helvetica, sans-serif;
   user-select: none;
   padding: 20px;
@@ -267,3 +267,7 @@ body{
   }
 }
 
+
+.loaderSection {
+    z-index: 10000;
+}

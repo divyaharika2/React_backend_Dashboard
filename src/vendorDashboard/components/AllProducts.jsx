@@ -40,8 +40,8 @@ const AllProducts = () => {
 
     
   return (
-    <div className='productSection'>
-        {!products ? (
+    <div className='allProductSection'>
+        {products.length === 0 ? (
             <p>No products added</p>
         ) : (
             <table className="product-table">
@@ -64,7 +64,7 @@ const AllProducts = () => {
                                         {item.image && (
                                             <img src={`${API_URL}/uploads/${item.image}`} 
                                             alt={item.productName}
-                                            style={{ width: '50px', height:'50px'  }}
+                                            style={{ width: '100px', height:'100px'  }}
                                             />
                                         )}
                                     </td>
