@@ -1,355 +1,313 @@
-/* Firm Section Container */
+/******************************/
+/* ADD FIRM SECTION */
+/******************************/
+
 .firmSection {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* align top to let form grow naturally */
+  width: 100vw;
   min-height: 100vh;
   padding: 40px 20px;
-  background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #1abc9c 0%, #2c3e50 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
 
-/* Form container */
-.tableForm {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+/* Loader overlay used in both */
+.loaderSection {
   width: 100%;
-  max-width: 50%;
-  box-sizing: border-box;
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #34495e;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-/* Form Heading */
-.tableForm h2 {
+/* Form container shared styles */
+.tableForm {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(44, 62, 80, 0.14);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  padding: 36px 28px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid #e0eafc;
+  animation: fadeIn 0.65s cubic-bezier(0.42,0,0.58,1);
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98) translateY(30px);}
+  to { opacity: 1; transform: none; }
+}
+
+/* Form heading */
+.tableForm h3 {
   color: #2c3e50;
-  font-weight: 700;
-  font-size: 1.8rem;
+  font-weight: 800;
+  font-size: 1.5rem;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 0 rgba(26,188,156,0.09);
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f4f6f9;
+  margin-top: 0;
+}
+
+/* Inline alert message box */
+.message-success,
+.message-error {
+  margin-bottom: 18px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1.5px solid;
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: break-word;
+  letter-spacing: 0.02em;
+}
+
+.message-success {
+  background: #d4edda;
+  color: #18623d;
+  border-color: #b6dec3;
+}
+
+.message-error {
+  background: #f8d7da;
+  color: #8c2428;
+  border-color: #f5c6cb;
 }
 
 /* Labels */
 .tableForm label {
-  display: block;
-  font-size: 1.2rem;
-  /* margin: 10px 0 6px; */
-  color: #34495e;
+  margin-top: 16px;
+  margin-bottom: 6px;
   font-weight: 600;
+  font-size: 1.01rem;
+  color: #234661;
+  transition: color 0.15s ease-in-out;
+  display: block;
 }
 
-/* Text Inputs and File Input */
+/* Text and file inputs */
 .tableForm input[type="text"],
 .tableForm input[type="file"] {
   width: 100%;
-  /* padding: 10px 14px; */
-  border-radius: 6px;
-  border: 1.5px solid #ccc;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fff;
+  padding: 11px 15px;
+  border-radius: 7px;
+  border: 1.5px solid #e2e6ea;
+  font-size: 1.09rem;
+  margin-bottom: 2px;
+  background: #f7fcfc;
+  transition: border-color 0.21s ease, box-shadow 0.22s ease;
+  outline: none;
   box-sizing: border-box;
 }
 
 .tableForm input[type="text"]:focus,
 .tableForm input[type="file"]:focus {
   border-color: #1abc9c;
-  box-shadow: 0 0 8px rgba(26, 188, 156, 0.6);
-  outline: none;
+  box-shadow: 0 0 10px rgba(26, 188, 156, 0.09);
+  background: #fff;
 }
 
-/* Checkbox container styles */
+/* Checkbox styling */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #1abc9c;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 4px;
+}
+
+/* Checkbox/group container spacing */
 .checkInp {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 14px;
 }
 
 .boxContainer,
-.regionboxContainer {
+.regionboxContainer,
+.inputsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 30px;
+  margin-top: 4px;
 }
 
 .checkboxContainer,
 .regionboxContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap:10px;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #34495e;
 }
 
+/* Label margin inside checkbox container */
 .checkboxContainer label,
 .regionboxContainer label {
+  margin-left: 2px;
+  font-size: 0.98rem;
   font-weight: 500;
-  font-size: 15px;
-  color: #34495e;
-  margin: 0;
-  display: flex;
-  justify-content: center;
 }
 
-/* Checkbox styling */
-input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #1abc9c;
-  cursor: pointer;
+/* File input padding */
+input[type="file"] {
+  padding: 8px 0;
+  background: #f7fcfc;
 }
 
-/* Submit Button Container */
+/* Submit button container */
 .btnSubmit {
+  margin-top: 26px;
   text-align: center;
-  margin-top: 12px;
-  margin-bottom: 10px;
 }
 
-/* Submit Button */
+/* Submit button style */
 .btnSubmit button {
-  background-color: #1abc9c;
+  background: linear-gradient(92deg, #1abc9c 70%, #00b894 100%);
   color: #fff;
   border: none;
-  padding: 12px 25px;
-  border-radius: 6px;
-  font-size: 1.1rem;
+  padding: 12px 0;
+  border-radius: 7px;
+  font-size: 1.13rem;
   font-weight: 700;
-  cursor: pointer;
   width: 100%;
-  max-width: 280px;
-  transition:
-    background-color 0.4s ease,
-    box-shadow 0.3s ease,
-    transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+  max-width: 200px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.10);
+  transition: background 0.28s ease, transform 0.19s ease, box-shadow 0.22s ease;
   user-select: none;
-  display: inline-block;
 }
 
 .btnSubmit button:hover,
 .btnSubmit button:focus {
-  background-color: #16a085;
-  box-shadow: 0 8px 20px rgba(22, 160, 133, 0.5);
+  background: linear-gradient(92deg, #16a085 50%, #00a97e 100%);
   transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 26px rgba(22, 160, 133, 0.17);
   outline: none;
 }
 
-/* Responsive Tweaks */
+/* Accessibility focus outlines */
+.tableForm input:focus-visible,
+.btnSubmit button:focus-visible,
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible {
+  outline: 2px solid #1abc9c;
+  outline-offset: 1.5px;
+}
+
+/* Responsive for small devices */
 @media (max-width: 600px) {
+  .addFirmSection,
   .firmSection {
     padding: 20px 10px;
+    min-height: auto;
   }
   .tableForm {
-    padding: 24px 20px;
-    max-width: 100%;
+    max-width: 98vw;
+    padding: 20px 15px;
   }
   .btnSubmit button {
     max-width: 100%;
-    padding: 14px 0;
+    font-size: 1rem;
   }
   .boxContainer,
-  .regionboxContainer {
-    gap: 10px;
+  .regionboxContainer,
+  .inputsContainer {
+    gap: 12px;
   }
 }
 
-/* **************************** */
-/* Product Section Container */
+
+/******************************/
+/* ADD PRODUCT SECTION */
+/******************************/
+
 .productSection {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* align top to let form grow naturally */
+  width: 100vw;
   min-height: 100vh;
   padding: 40px 20px;
   background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
 
-
-.tableForm input[type="text"]:focus,
-.tableForm input[type="file"]:focus {
-  border-color: #1abc9c;
-  box-shadow: 0 0 8px rgba(26, 188, 156, 0.6);
-  outline: none;
+/* Loading message in product section */
+.loaderSection p {
+  margin-top: 12px;
+  color: #34495e;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-/* Checkbox Container Styles */
-.checkInp {
-  margin-top: 18px;
+/* Reuse form and other styles from above for .tableForm etc. */
+
+/* Success and error message repeated here for clarity */
+.message-success,
+.message-error {
   margin-bottom: 18px;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 1rem;
+  word-break: break-word;
+  letter-spacing: 0.02em;
+  border: 1.5px solid;
 }
 
-.boxContainer {
+.message-success {
+  background: #d4edda;
+  color: #19692c;
+  border-color: #b6deb6;
+}
+
+.message-error {
+  background: #f8d7da;
+  color: #812b30;
+  border-color: #f5c6cb;
+}
+
+/* Checkbox container */
+.inputsContainer {
   display: flex;
+  gap: 18px;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 5px;
 }
 
 .checkboxContainer {
   display: flex;
   align-items: center;
-  gap: 1px;
-  margin-left: 50px;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #34495e;
 }
 
-/* Checkbox Styling */
-input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #1abc9c;
-  cursor: pointer;
-  margin: 0;
-}
+/* Accessibility focus outlines included above as well */
 
-input[type="radio"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #1abc9c;
-  cursor: pointer;
-  margin: 0;
-}
+/* Responsive tweaks shared via media queries earlier */
 
-/* *****************WELCOME_PAGE****************** */
-/* Ensure page takes full viewport */
-html, body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* Welcome section: vibrant animated multi-color gradient */
-.welcome {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: linear-gradient(120deg,
-    #ff6a00,    /* vivid orange */
-    #f9d423 40%,/* sunshine yellow */
-    #e65c00 60%,/* deep orange */
-    #cc2b5e 75%,/* magenta rose */
-    #753a88    /* violet */
-  );
-  background-size: 300% 300%;
-  animation: gradientMove 12s ease-in-out infinite;
-  overflow: hidden;
-}
-
-/* Dreamy animated gradient keyframes */
-@keyframes gradientMove {
-  0%, 100% { background-position: 0% 50%; }
-  50%      { background-position: 100% 50%; }
-}
-
-/* Optional - floating bubble shapes for playful color highlights */
-.welcome::before,
-.welcome::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(43px);
-  opacity: 0.35;
-  z-index: 0;
-  pointer-events: none;
-  animation: floatBubbles 7s ease-in-out infinite alternate;
-}
-
-.welcome::before {
-  width: 340px;
-  height: 340px;
-  top: 10%;
-  left: 5%;
-  background: radial-gradient(circle at 50% 50%, #f6d365bb 60%, #ffea00cc 100%);
-  animation-delay: 0s;
-}
-
-.welcome::after {
-  width: 250px;
-  height: 250px;
-  bottom: 13%;
-  right: 9%;
-  background: radial-gradient(circle at 50% 50%, #2af598cc 50%, #009efd99 120%);
-  animation-delay: 3s;
-}
-
-@keyframes floatBubbles {
-  0% { transform: translateY(0) scale(1); opacity: 0.33; }
-  60% { transform: translateY(-22px) scale(1.06); opacity: 0.49; }
-  100% { transform: translateY(-32px) scale(0.96); opacity: 0.33; }
-}
-
-/* Heading styling: white text, rainbow shadow, elegant font */
-.welcome h2 {
-  z-index: 1;
-  position: relative;
-  color: #fff;
-  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-shadow:
-    0 0 16px #fff,
-    2px 3px 0 #fe346e,
-    4px 2px 15px #1fddff,
-    1px 7px 20px #c471f5;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  background: rgba(0,0,0,0.09);
-  backdrop-filter: blur(1.2px);
-  margin: 0;
-  user-select: none;
-  transition: transform 0.32s cubic-bezier(.26,.82,.46,.98);
-}
-
-/* Pop effect on hover */
-.welcome h2:hover {
-  transform: scale(1.04) rotate(-1.4deg);
-}
-
-/* Extra responsive tweaks for mobile */
-@media (max-width: 600px) {
-  .welcome {
-    min-height: 60vh;
-    padding: 2.5rem 0.6rem;
-  }
-  .welcome h2 {
-    font-size: clamp(1.5rem, 12vw, 2.7rem);
-    padding: 0.13em 0.33em;
-  }
-}
-
-
-/* .allProductsSection{
- width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* align top to let form grow naturally 
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
-} */
-
+/* *********************** */
 /* AllProducts section styles */
+/* *********************** */
 .allProductsSection {
   width: 100%;
   padding: 40px;

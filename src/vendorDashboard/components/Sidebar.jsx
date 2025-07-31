@@ -1,16 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const Sidebar = ({showFirmHandler, showProductHandler, showAllProductsHandler, showFirmTitle}) => {
+const Sidebar = ({
+  showFirmHandler,
+  showProductHandler,
+  showAllProductsHandler,
+  showFirmTitle
+}) => {
   return (
     <div className="sideBarSection">
-        <ul>
-          {showFirmTitle ?<li onClick={showFirmHandler}>Add Firm</li> :""}
-        <li onClick={showProductHandler}>Add Products</li>
+      <ul>
+        {showFirmTitle ? <li onClick={showFirmHandler}>Add Firm</li> : "" }
+        <li onClick={showProductHandler}>Add Product</li>
         <li onClick={showAllProductsHandler}>All Products</li>
         <li>User Details</li>
-        </ul>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
