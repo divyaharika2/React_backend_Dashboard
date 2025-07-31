@@ -345,11 +345,15 @@ input[type="radio"]:focus-visible {
 .product-table thead,
 .product-table tbody {
   display: block;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-table thead tr,
 .product-table tbody tr {
   width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-table tbody {
@@ -362,7 +366,7 @@ input[type="radio"]:focus-visible {
 .product-table th,
 .product-table td {
   width: 25%; /* Four columns: 25% each */
-  padding: 16px 0;
+  padding: 18px 0;
   text-align: center;
   font-size: 18px;
   box-sizing: border-box;
@@ -442,6 +446,6 @@ input[type="radio"]:focus-visible {
 .product-table td {
   text-align: center;      /* horizontal center */
   vertical-align: middle;  /* vertical center */
-  padding: 25px 55px;      /* comfortable padding */
+  padding: 20px 65px;      /* comfortable padding */
   box-sizing: border-box;
 }
