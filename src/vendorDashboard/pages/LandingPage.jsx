@@ -28,14 +28,19 @@ const LandingPage = () => {
     }
   }, [])
 
-  useEffect(()=>{
-      const firmName = localStorage.getItem('firmName');
-      const firmId = localStorage.getItem('firmId')
-      if(firmName || firmId ){
-          setShowFirmTitle(false)
-          setShowWelcome(true)
-      }
-  },[])
+ useEffect(() => {
+  const firmId = localStorage.getItem('firmId');
+  const firmName = localStorage.getItem('firmName');
+  if (firmId && firmName) {
+    setShowFirmTitle(false);
+    setShowWelcome(false);
+    setShowFirm(false);
+    setShowProduct(true);  // shows AddProduct component
+  } else {
+    setShowWelcome(true);
+  }
+}, []);
+
 
 
 

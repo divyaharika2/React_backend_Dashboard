@@ -157,8 +157,8 @@ const AddFirm = () => {
                   />
                 </div>
                 <div className="regBoxContainer">
-                  <label>Bakery</label>
-                  <input type="checkbox" value="bakery" checked ={region.includes('bakery')}
+                  <label>Italian</label>
+                  <input type="checkbox" value="italian" checked ={region.includes('italian')}
                   onChange={handleRegionChange}
                   />
                 </div>
