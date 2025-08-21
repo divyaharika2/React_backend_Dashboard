@@ -92,6 +92,7 @@ const showFirmHandler = ()=>{
     alert("please login");
     setShowLogin(true)
     setShowRegister(false)
+     setShowWelcome(false)
   }
 }
 const showProductHandler = ()=>{
@@ -106,6 +107,7 @@ const showProductHandler = ()=>{
         alert("please login")
         setShowLogin(true)
         setShowRegister(false)
+        setShowWelcome(false)
     }
 
 }
@@ -131,6 +133,7 @@ const showAllProductsHandler = ()=>{
     alert("please login")
     setShowLogin(true)
     setShowRegister(false)
+     setShowWelcome(false)
  }
 }
   return (
