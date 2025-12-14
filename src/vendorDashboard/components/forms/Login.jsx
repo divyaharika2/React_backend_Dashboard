@@ -20,42 +20,48 @@ const Login = ({ showWelcomeHandler }) => {
     try {
       const response = await fetch(`${API_URL}/vendor/login`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      })
-      const data = await response.json();
-      if (response.ok) {
-        alert('Login success');
-        setEmail("");
-        setPassword("");
-        localStorage.setItem('loginToken', data.token);
-        showWelcomeHandler()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
 
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error("Login failed");
       }
-      const vendorId = data.vendorId
-      console.log("checking for VendorId:", vendorId)
-      const vendorResponse = await fetch(`${API_URL}/vendor/single-vendor/${vendorId}`)
-      window.location.reload()
+
+      // Login success
+      alert('Login success');
+      setEmail('');
+      setPassword('');
+      localStorage.setItem('loginToken', data.token);
+      showWelcomeHandler();
+
+      const vendorId = data.vendorId;
+      console.log('checking for VendorId:', vendorId);
+
+      const vendorResponse = await fetch(`${API_URL}/vendor/single-vendor/${vendorId}`);
       const vendorData = await vendorResponse.json();
-      if (vendorResponse.ok) {
-        const vendorFirmId = vendorData.vendorFirmId;
-        const vendorFirmName = vendorData.vendor.firm[0].firmName;
-        localStorage.setItem('firmId', vendorFirmId);
-        localStorage.setItem('firmName', vendorFirmName);
-        window.location.reload();
+
+      if (!vendorResponse.ok) {
+        throw new Error("Vendor fetch failed");
       }
-      else {
-        alert('login fail');
-      }
+
+      const vendorFirmId = vendorData.vendorFirmId;
+      const vendorFirmName = vendorData.vendor.firm[0].firmName;
+      localStorage.setItem('firmId', vendorFirmId);
+      localStorage.setItem('firmName', vendorFirmName);
+
+      // ✅ Reload only after everything is done
+      window.location.reload();
 
     } catch (error) {
-      alert("login fail")
+      console.error("Login error:", error);
+      alert("login fail");
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="loginSection">
