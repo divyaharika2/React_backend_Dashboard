@@ -6,12 +6,34 @@ body{
     box-sizing: border-box;
     font-family: "Roboto Condensed",sans-serif;
 }
-
+ 
 /* ************NAV_BAR************* */
-.navSection {
+/* .navSection {
   background-color: #ffffff;
-  background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
-  border-bottom: 1px solid #dcdcdc;
+  background: radial-gradient(#31694E);
+  border-bottom: 1px solid #31694E;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: medium;
+  font-weight: 600;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+} */
+
+:root {
+  --theme-primary: #31694E;   /* current green */
+  --theme-secondary: #658C58; /* sidebar green */
+  --theme-accent: #1abc9c;    /* login/register accent */
+  --theme-text-light: #ffffff;
+  --theme-text-dark: #2c3e50;
+}
+
+.navSection {
+  background-color: var(--theme-text-light);
+  background: radial-gradient(var(--theme-primary));
+  border-bottom: 1px solid var(--theme-primary);
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -21,16 +43,21 @@ body{
   font-family: 'Segoe UI', Roboto, sans-serif;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
+.firmName{
+   color: #ffffff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
 .company {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
+  margin-left: -14px;
 }
 .userAuth {
   display: flex;
-  gap: 8px;
+  gap: 5px;
   font-size: 1rem;
-  color: #000000;
+  color: #ffffff;
 }
 .separator {
   pointer-events: none;
@@ -50,15 +77,15 @@ body{
 
 
 /* ***********SIDE_BAR*********** */
-
 .sideBarSection {
   width: 220px;
   height: 100vh;
-  background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
+  background: radial-gradient(var(--theme-secondary));
   padding: 20px 35px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   font-family: 'Segoe UI', sans-serif;
 }
+
 .sideBarSection ul {
   list-style: none;
   padding: 0;
@@ -67,9 +94,10 @@ body{
 .sideBarSection li {
   padding: 12px 20px;
   margin-bottom: 10px;
-  color: #ecf0f1;
+  color: #000000;
   cursor: pointer;
-  border-radius: 6px;
+  font-weight: 600;
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
 .sideBarSection li:hover {

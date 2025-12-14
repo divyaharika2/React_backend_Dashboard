@@ -11,11 +11,11 @@ const Navbar = ({showLoginHandler, showRegisterHandler, showLogOut, logOutHandle
             Vendor Dashboard
         </div>
         <div className="firmName">
-            <h4>Firname : {firmName}</h4>
+            <h4> Restaurant Name : {firmName} </h4>
         </div>
         <div className="userAuth">
           {!showLogOut ?  <>
-          <span onClick={showLoginHandler}>Login </span>
+          <span onClick={showLoginHandler}>Login</span>
           <span>/</span>
           <span onClick={showRegisterHandler}>Register</span>
           </> : <span onClick={logOutHandler}
