@@ -34,22 +34,28 @@ const Login = ({ showWelcomeHandler }) => {
         throw new Error(data.error || "Login failed");
       }
 
-      // store token only
+      // ✅ Store token
       localStorage.setItem("loginToken", data.token);
 
-      // clear stale firm/user data (IMPORTANT)
+      // ✅ Clear old data
       localStorage.removeItem("firmId");
       localStorage.removeItem("firmName");
+      localStorage.removeItem("firmImage");
       localStorage.removeItem("username");
       localStorage.removeItem("email");
 
       /* ===============================
          FETCH FULL VENDOR PROFILE
       =============================== */
-      const vendorId = data.vendorId;
       const vendorResponse = await fetch(
-        `${API_URL}/vendor/single-vendor/${vendorId}`
+        `${API_URL}/vendor/single-vendor/${data.vendorId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${data.token}`,
+          },
+        }
       );
+
       const vendorData = await vendorResponse.json();
 
       if (!vendorResponse.ok) {
@@ -57,32 +63,35 @@ const Login = ({ showWelcomeHandler }) => {
       }
 
       /* ===============================
-         STORE USER DETAILS (CORRECT PLACE)
+         STORE USER DETAILS
       =============================== */
-      if (vendorData?.vendor) {
-        localStorage.setItem("username", vendorData.vendor.username);
-        localStorage.setItem("email", vendorData.vendor.email);
-      }
+      const vendor = vendorData.vendor;
+      localStorage.setItem("username", vendor.username);
+      localStorage.setItem("email", vendor.email);
 
-      // store firm only if it exists
-      if (vendorData?.vendor?.firm?.length > 0) {
-        localStorage.setItem("firmId", vendorData.vendorFirmId);
-        localStorage.setItem(
-          "firmName",
-          vendorData.vendor.firm[0].firmName
-        );
+      /* ===============================
+         STORE FIRM DETAILS (IF EXISTS)
+      =============================== */
+      if (vendor.firm && vendor.firm.length > 0) {
+        const firm = vendor.firm[0];
+
+        localStorage.setItem("firmId", firm._id);
+        localStorage.setItem("firmName", firm.firmName);
+
+        if (firm.image) {
+          localStorage.setItem("firmImage", firm.image);
+        }
       }
 
       setEmail("");
       setPassword("");
 
       alert("Login successful");
-      showWelcomeHandler(); // updates LandingPage state
+      showWelcomeHandler(); // SPA navigation
 
     } catch (err) {
       console.error("Login error:", err);
       setError("Login failed. Please check your credentials.");
-      alert("Login failed");
     } finally {
       setLoading(false);
     }
@@ -90,15 +99,13 @@ const Login = ({ showWelcomeHandler }) => {
 
   return (
     <div className="loginSection">
-      {loading && (
+      {loading ? (
         <div className="loaderSection">
           <ThreeCircles height={100} width={100} color="#4fa94d" />
           <p>Login in process...</p>
           <p>Please wait</p>
         </div>
-      )}
-
-      {!loading && (
+      ) : (
         <form className="authForm" onSubmit={loginHandler} autoComplete="off">
           <h3>Vendor Login</h3>
 
