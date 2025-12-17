@@ -8,262 +8,403 @@ body{
 }
  
 /* ************NAV_BAR************* */
-/* .navSection {
-  background-color: #ffffff;
-  background: radial-gradient(#31694E);
-  border-bottom: 1px solid #31694E;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: medium;
-  font-weight: 600;
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-} */
 
-:root {
-  --theme-primary: #31694E;   /* current green */
-  --theme-secondary: #658C58; /* sidebar green */
-  --theme-accent: #1abc9c;    /* login/register accent */
-  --theme-text-light: #ffffff;
-  --theme-text-dark: #2c3e50;
-}
-
+/* Navbar Container */
 .navSection {
-  background-color: var(--theme-text-light);
-  background: radial-gradient(var(--theme-primary));
-  border-bottom: 1px solid var(--theme-primary);
-  padding: 15px 30px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: medium;
-  font-weight: 600;
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-}
-.firmName{
-   color: #ffffff;
-  font-family: 'Segoe UI', Roboto, sans-serif;
-}
-.company {
-  font-size: 1.6rem;
-  font-weight: 600;
+  justify-content: space-between;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #ffffff;
-  margin-left: -14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  top: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Company Title */
+.company {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Firm Name Section */
+.Firmname h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* Auth Section */
 .userAuth {
   display: flex;
-  gap: 5px;
-  font-size: 1rem;
-  color: #ffffff;
-}
-.separator {
-  pointer-events: none;
-  color: #672525;
+  align-items: center;
+  gap: 10px;
 }
 
+/* Login / Register Text */
 .userAuth span {
   cursor: pointer;
-  padding: 5px 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
+
+/* Hover Effects */
 .userAuth span:hover {
-  background-color: #f0f0f0;
-  color: #2980b9;
+  background-color: rgba(255, 255, 255, 0.15);
 }
+
+/* Logout Button */
+.logout {
+  background-color: #ef4444;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 6px;
+}
+
+.logout:hover {
+  background-color: #dc2626;
+}
+
+/* Divider "/" */
+.userAuth span:nth-child(2) {
+  cursor: default;
+  padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .Firmname h4 {
+    font-size: 14px;
+  }
+
+  .company {
+    font-size: 20px;
+  }
+}
+
 
 
 /* ***********SIDE_BAR*********** */
+
+/* Sidebar Container */
 .sideBarSection {
-  width: 220px;
-  height: 100vh;
-  background: radial-gradient(var(--theme-secondary));
-  padding: 20px 35px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  font-family: 'Segoe UI', sans-serif;
+  width: 240px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+  padding-top: 30px;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Sidebar Menu */
 .sideBarSection ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.sideBarSection li {
-  padding: 12px 20px;
-  margin-bottom: 10px;
-  color: #000000;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-.sideBarSection li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateX(5px);
+
+/* Sidebar Items */
+.sideBarSection ul li {
+  padding: 14px 24px;
+  font-size: 15px;
   font-weight: 500;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
 }
-.collectionSection{
-    display: flex;
+
+/* Hover Effect */
+.sideBarSection ul li:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  padding-left: 32px;
 }
+
+/* Active Indicator (Optional future use) */
+.sideBarSection ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #38bdf8;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sideBarSection ul li:hover::before {
+  opacity: 1;
+}
+
+/* Disabled / Hidden Item Safety */
+.sideBarSection ul li:empty {
+  display: none;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sideBarSection {
+    width: 200px;
+  }
+
+  .sideBarSection ul li {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+}
+.collectionSection{ display: flex; }
+
 
 /***********Loginn formm************/
 
+/* Full page layout */
 .loginSection {
   width: 100%;
+  height: 90vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
-  font-family: 'Segoe UI', sans-serif;
+  justify-content: center;
+
+  /* Soft professional background */
+  background: linear-gradient(135deg, #e6eef5, #cfd9df);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Card container */
 .authForm {
-  background-color: #fff;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
+  background: #ffffff;
+
+  padding: 36px 40px;
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  animation: fadeInUp 0.4s ease;
 }
 
+/* Subtle entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
 .authForm h3 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
 }
 
+/* Labels */
 .authForm label {
   display: block;
-  font-size: 0.9rem;
-  margin: 10px 0 5px;
-  color: #34495e;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
 }
 
+/* Inputs */
 .authForm input {
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-  transition: border-color 0.3s ease;
+  padding: 12px 2px;
+
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+
+  background-color: #ffffff;
+  color: #111827;
+
+  margin-bottom: 18px;
+  transition: all 0.25s ease;
+}
+
+.authForm input::placeholder {
+  color: #9ca3af;
 }
 
 .authForm input:focus {
-  border-color: #1abc9c;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
   outline: none;
 }
 
+/* Button wrapper */
 .btnSubmit {
-  text-align: center;
+  margin-top: 6px;
 }
 
+/* Primary button */
 .btnSubmit button {
-  background-color: #747d7c;
-  color: #000000;
+  width: 100%;
+  padding: 12px;
+
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btnSubmit button:hover {
-  background-color: #16a085;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+/* Button active */
+.btnSubmit button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .authForm {
+    padding: 28px 24px;
+  }
 }
 
 
 /***********Registerrr formm************/
 
-.registerSection{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle at top left, #1abc9c, #2c3e50);
-    
-}
-.registerSection .authForm{
-     margin-top: -100px;
+.registerSection {
+  width: 100%;
+  height: 90vh;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #e6eef5, #cfd9df);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Register Card */
+.registerSection .authForm {
+  width: 100%;
+  max-width: 420px;
+
+  background: #ffffff;
+  padding: 36px 40px;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /******************************/
 /*404 error SECTION */
 /******************************/
 
-/* 404 page */
 .errorSection {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f8f9fa, #e0e0e0);
-  font-family: 'Poppins', sans-serif;
-  color: #2c3e50;
+
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+
+  color: #1f2937;
   text-align: center;
-  padding: 20px;
+  padding: 24px;
 }
 
 .errorSection h1 {
-  font-size: 8rem;
-  color: #e74c3c;
-  margin: 20px 0 10px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 7rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 12px;
 }
 
 .errorSection div {
-  font-size: 1.5rem;
-  color: #555;
-  margin-bottom: 40px;
+  font-size: 1.4rem;
+  color: #4b5563;
+  margin-bottom: 36px;
 }
 
 .errorSection a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #fff;
-  border-radius: 8px;
+
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+
+  border-radius: 10px;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
   transition: all 0.3s ease;
 }
 
 .errorSection a:hover {
-  background: linear-gradient(135deg, #5a67d8, #6b46c1);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.45);
 }
-
-.errorSection a p {
-  margin: 0;
-}
-
-
-
 
 
 /******************************/
 /* WELCOME SECTION */
 /******************************/
-
-
-
-/* Container fills viewport and centers content */
-
 
 .welcome {
   height: 100vh;
@@ -294,7 +435,6 @@ body{
     font-size: 2rem;
   }
 }
-
 
 .loaderSection {
     z-index: 10000;

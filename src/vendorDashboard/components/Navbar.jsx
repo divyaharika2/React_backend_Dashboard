@@ -10,7 +10,7 @@ const Navbar = ({ showLoginHandler, showRegisterHandler, showLogOut, logOutHandl
       <div className="company">
         Vendor Dashboard
       </div>
-      <div className="firmName">
+      <div className="Firmname">
         <h4> Restaurant Name : {firmName} </h4>
       </div>
       <div className="userAuth">
