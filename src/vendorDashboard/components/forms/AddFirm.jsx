@@ -105,9 +105,9 @@ const AddFirm = () => {
         <form className="tableForm" onSubmit={handleFirmSubmit}>
           <h3>Add Firm</h3>
           <label>Firm Name</label>
-          <input type="text" name="firmName" value={firmName} onChange={(e) => setFirmName(e.target.value)} />
+          <input type="text" name="firmName" value={firmName} onChange={(e) => setFirmName(e.target.value)}  placeholder="Enter Restaurant Name" />
           <label>Area</label>
-          <input type="text" name="area" value={area} onChange={(e) => setArea(e.target.value)} />
+          <input type="text" name="area" value={area} onChange={(e) => setArea(e.target.value)}  placeholder="Enter Area" />
 
           <div className="checkInp">
             <label>Category</label>
@@ -124,7 +124,7 @@ const AddFirm = () => {
           </div>
 
           <label>Offer</label>
-          <input type="text" name="offer" value={offer} onChange={(e) => setOffer(e.target.value)} />
+          <input type="text" name="offer" value={offer} onChange={(e) => setOffer(e.target.value)}  placeholder="Enter offers"/>
 
           <div className="checkInp">
             <label>Region</label>
