@@ -431,7 +431,6 @@ input[type="radio"] {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000;
   font-weight: 500;
-
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -622,7 +621,7 @@ input[type="radio"] {
 
 }
 }
-@media (max-width: 768px) {
+@media (max-width: 344px){
 
   .allProductSection {
     padding: 20px 0;
@@ -654,6 +653,7 @@ input[type="radio"] {
   /* Images smaller */
   .product-table img {
     margin-top: -10px;
+    margin-left: -20px;
   }
 
   /* Buttons usable on touch */
@@ -661,37 +661,9 @@ input[type="radio"] {
     padding: 6px 8px;
     font-size: 14px;
     border-radius: 4px;
-  }
-
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  .product-table {
-    min-width: 700px;
-  }
-
-  .product-table th,
-  .product-table td {
-    font-size: 14px;
-    padding: 12px 9px;
-    gap:70px;
-  }
-
-  .product-table img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .product-table button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
-  .product-table tbody {
-    max-height: 300px;
+    margin-left: 4px;
   }
 }
-
 
 
 /* ===============================
@@ -796,4 +768,13 @@ input[type="radio"] {
     font-size: 14px;
   }
 }
+@media (max-width: 768px) {
+  .collectionSection > .sideBarSection {
+    display: none !important;
+  }
 
+  .collectionSection > .sideBarSection.open {
+    top: 12%;
+    width: 344px;
+  }
+}

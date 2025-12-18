@@ -6,6 +6,26 @@ body{
     box-sizing: border-box;
     font-family: "Roboto Condensed",sans-serif;
 }
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .navSection {
+    flex-wrap: nowrap;
+  }
+
+  .logout {
+    white-space: nowrap;
+  }
+}
+
  
 /* ************NAV_BAR************* */
 /* ===============================
@@ -126,6 +146,7 @@ body{
   /* show dots */
   .threeDots {
     display: block;
+    margin-left: 1px;
   }
 
   /* hide sidebar by default */
@@ -153,11 +174,12 @@ body{
   .company {
     font-size: 14px;
     margin-right: 15px;
+    margin-left: 10px;
   }
 
   .Firmname h4 {
-    font-size: 12px;
-    max-width: 230px;
+    font-size: 10px;
+    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -166,47 +188,39 @@ body{
   display: flex;
   align-items: center;
   margin-left: 3px;
+  font-size: 10px;
 }
 }
-
-/* ===============================
-   DESKTOP
-================================ */
-/* 🔥 FORCE MOBILE SIDEBAR HIDE */
+/* Force Firmname to next line (column) on small screens */
 @media (max-width: 768px) {
-  .collectionSection > .sideBarSection {
-    display: none !important;
+  .navSection {
+    flex-wrap: wrap !important;
   }
 
-  .collectionSection > .sideBarSection.open {
-    display: block !important;
-    position: flex;
-    top: 60px;
-    left: 0;
-    top: 9.5%;
-    width: 450px;
-    height: 1px;
-    min-height: 54px;
-    background: #0f2e34;
-    z-index: 9999;
-    border-radius: 10px;
-  }
-  
-  /* row-wise menu */
-  .sideBarSection ul {
+  .Firmname {
+    flex-basis: 100% !important;   /* 🔥 forces new row */
+    order: 2 !important;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
   }
 
-  .sideBarSection ul li {
-    padding: 12px 6px;
-    font-size: 13px;
-    text-align: center;
-    white-space: nowrap;
-    margin-top: -25px;
+  .company {
+    order: 1 !important;
+  }
+
+  .userAuth {
+    order: 1 !important;
+  }
+
+  .Firmname h4 {
+    font-size: 12px;
+    white-space: normal !important;
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
   }
 }
+
 
 
 
@@ -271,26 +285,49 @@ body{
   display: none;
 }
 
-/* Responsive Sidebar */
+
+/* 🔥 FORCE MOBILE SIDEBAR HIDE */
 @media (max-width: 768px) {
-  .sideBarSection {
-    width: 200px;
+  .collectionSection > .sideBarSection {
+    display: none !important;
+  }
+
+  .collectionSection > .sideBarSection.open {
+    display: block !important;
+    position: flex;
+    top: 60px;
+    left: 0;
+    top: 14.5%;
+    width: 360px;
+    height: 1px;
+    min-height: 40px;
+    background: #0f2e34;
+    z-index: 9999;
+    border-radius: 10px;
+  }
+  
+  /* row-wise menu */
+  .sideBarSection ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .sideBarSection ul li {
-    font-size: 14px;
-    padding: 12px 20px;
+    padding: 10px 6px;
+    font-size: 10px;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: -25px;
   }
 }
-.collectionSection{ display: flex; }
-
 
 /***********Loginn formm************/
 
 /* Full page layout */
 .loginSection {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -419,7 +456,7 @@ body{
 
 .registerSection {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
 
   display: flex;
   align-items: center;
