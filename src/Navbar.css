@@ -1,0 +1,142 @@
+/* ************NAV_BAR************* */
+
+.navSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;              /* allow wrapping on mobile */
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 8px;
+}
+
+/* ===============================
+   COMPANY TITLE
+================================ */
+.company {
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ===============================
+   FIRM NAME (restaurant name)
+================================ */
+.Firmname {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.Firmname h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-align: center;
+  white-space: normal;          /* allow wrapping */
+  max-width: 300px;
+}
+
+/* ===============================
+   AUTH SECTION
+================================ */
+.userAuth {
+  gap: 0px;
+}
+
+.userAuth span {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.userAuth span:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.logout {
+  background-color: #ef4444;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.logout:hover {
+  background-color: #dc2626;
+}
+
+/* ===============================
+   THREE DOTS (hamburger)
+================================ */
+.threeDots {
+  display: none;               /* ❌ hidden by default (desktop) */
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* ===============================
+   MOBILE (≤ 768px)
+================================ */
+@media (max-width: 768px) {
+  .threeDots {
+    display: block;            /* ✅ show only on mobile */
+    order: 1;
+  }
+
+  .company {
+    font-size: 14px;
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .Firmname {
+    order: 3;
+    flex: 1 0 100%;               /* force new line on mobile */
+
+  }
+
+  .Firmname h4 {
+    font-size: 12px;
+  }
+
+  .userAuth {
+    order: 1;
+    font-size: 12px;
+    margin-left: auto;
+  }
+}
+
+
+/* ===============================
+   EXTRA SMALL DEVICES (≤ 344px)
+================================ */
+@media (max-width: 344px) {
+  .company {
+    font-size: 13px;
+  }
+
+  .Firmname h4 {
+    font-size: 11px;
+    max-width: 220px;
+  }
+
+  .userAuth {
+    font-size: 11px;
+    gap: 4px;
+  }
+}
+.collectionSection {
+  display: flex;
+}

@@ -1,0 +1,120 @@
+
+:root {
+  --sidebar-width: 220px;
+  --navbar-height: 80px;
+  --primary: #1abc9c;
+  --dark: #2c3e50;
+}
+
+/* ===============================
+   USER DETAILS
+================================ */
+
+.userSection {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 50px;
+  background: linear-gradient(135deg, #eef2f7, #e5ecf4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.userCard {
+  background: #fff;
+  width: 100%;
+  max-width: 550px;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+/* ===============================
+   RESTAURANT IMAGE
+================================ */
+
+.restaurantImage {
+  margin-bottom: 20px;
+}
+
+.restaurantImage img {
+  width: 400px;
+  height: 300px;
+  border-radius: 10%;
+  object-fit: cover;
+  border: 4px solid #324944;
+}
+
+.noImage {
+  color: #888;
+  font-size: 14px;
+}
+
+/* ===============================
+   USER ROWS
+================================ */
+
+.userRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.userRow span {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.userRow p {
+  margin: 0;
+  color: #34495e;
+}
+
+@media (max-width: 768px) {
+
+  .userSection {
+    padding: 20px 15px;
+    align-items: flex-start;
+  }
+
+  .userCard {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  /* Restaurant Image */
+  .restaurantImage img {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+  }
+
+  /* User Rows */
+  .userRow {
+    flex-direction: row;      /* 🔥 stack label & value */
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .userRow span {
+    font-size: 14px;
+  }
+
+  .userRow p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .collectionSection > .sideBarSection {
+    display: none !important;
+  }
+
+  .collectionSection > .sideBarSection.open {
+    top: 12%;
+    width: 344px;
+  }
+}

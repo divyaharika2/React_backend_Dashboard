@@ -1,7 +1,11 @@
 import React from 'react'
 import LandingPage from './vendorDashboard/pages/LandingPage'
 import "./App.css"
-import "./App1.css"
+import "./UserDetails.css"
+import "./Navbar.css"
+import "./Sidebar.css"
+import "./LoginRegisterForms.css"
+import "./AddingFP.css"
 import { Routes, Route } from 'react-router-dom'
 import NotFound from './vendorDashboard/components/forms/NotFound'
 

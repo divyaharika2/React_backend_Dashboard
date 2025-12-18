@@ -1,0 +1,95 @@
+/* ***********SIDE_BAR*********** */
+
+/* Sidebar Container */
+.sideBarSection {
+  width: 240px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+  padding-top: 30px;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar Menu */
+.sideBarSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar Items */
+.sideBarSection ul li {
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effect */
+.sideBarSection ul li:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  padding-left: 32px;
+}
+
+/* Active Indicator */
+.sideBarSection ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #38bdf8;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sideBarSection ul li:hover::before {
+  opacity: 1;
+}
+
+/* Disabled / Hidden Item Safety */
+.sideBarSection ul li:empty {
+  display: none;
+}
+
+/* 🔥 MOBILE SIDEBAR */
+@media (max-width: 768px) {
+  .collectionSection > .sideBarSection {
+    display: none !important;
+  }
+
+  .collectionSection > .sideBarSection.open {
+    display: block !important;
+    position: fixed;          /* ✅ overlay on mobile */
+    top: 127px;                /* below navbar */
+    left: 0;
+    width: 80%;              /* full width row */
+    height: 50px;
+    min-height: 10px;
+    background: #0f2e34;
+    z-index: 9999;
+    border-radius: 0 0 10px 10px;
+    padding: 8px 0;
+  }
+  
+  /* row-wise menu */
+  .sideBarSection ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .sideBarSection ul li {
+    padding: 8px 6px;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0;
+  }
+}

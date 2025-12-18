@@ -1,0 +1,160 @@
+/***********Login Form************/
+
+/* Full page layout */
+.loginSection {
+  width: 100%;
+  min-height: 100vh;             /* better fit on small screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e6eef5, #cfd9df);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 10px;                 /* ✅ safe spacing on mobile */
+}
+
+/* Card container */
+.authForm {
+  width: 100%;
+  margin-top: -120px;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 36px 40px;
+  border-radius: 16px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Subtle entrance animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.authForm h3 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Labels */
+.authForm label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Inputs */
+.authForm input {
+  width: 100%;
+  padding: 12px 10px;            /* ✅ more padding for touch devices */
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #111827;
+  margin-bottom: 18px;
+  transition: all 0.25s ease;
+}
+
+.authForm input::placeholder { color: #9ca3af; }
+
+.authForm input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+  outline: none;
+}
+
+/* Button wrapper */
+.btnSubmit { margin-top: 6px; }
+
+/* Primary button */
+.btnSubmit button {
+  width: 50%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: linear-gradient(135deg, #203a43, #2c5364);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnSubmit button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btnSubmit button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/***********Register Form************/
+
+.registerSection {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e6eef5, #cfd9df);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 16px;                 /* ✅ safe spacing on mobile */
+}
+
+/* Register Card */
+.registerSection .authForm {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 36px 40px;
+  border-radius: 16px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.4s ease;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .authForm {
+    padding: 28px 24px; 
+
+}
+  .authForm h3 { font-size: 20px; }
+  .authForm input { font-size: 13px; }
+  .btnSubmit button { font-size: 14px; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .authForm {
+    padding: 24px 18px;
+    border-radius: 12px;
+  }
+  .authForm h3 { font-size: 18px; }
+  .authForm input { font-size: 12px; padding: 10px 8px; }
+  .btnSubmit button { font-size: 13px; padding: 10px; }
+}
+
+/* Extra small devices (≤344px) */
+@media (max-width: 344px) {
+  .authForm { padding: 20px 14px; }
+  .authForm h3 { font-size: 16px; }
+  .authForm input { font-size: 11px; }
+  .btnSubmit button { font-size: 12px; padding: 8px; }
+}

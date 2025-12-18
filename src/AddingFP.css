@@ -1,28 +1,3 @@
-/******************************/
-/* ADD FIRM SECTION */
-/******************************/
-/* ===============================
-   GLOBAL FIXES (IMPORTANT)
-================================ */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* ===============================
-   LAYOUT CONSTANTS
-================================ */
-:root {
-  --sidebar-width: 220px;
-  --navbar-height: 80px;
-  --primary: #1abc9c;
-  --dark: #2c3e50;
-}
 
 /* ===============================
    ADD FIRM SECTION
@@ -30,8 +5,7 @@ body {
 
 .firmSection {
   width: 100%;
-  padding: 30px 20px;
-
+  padding: 0px 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -188,6 +162,7 @@ input[type="checkbox"] {
 @media (max-width: 768px) {
   .tableForm {
     padding: 24px 18px;
+    padding-top: 20px;
   }
 
   .inputsContainer {
@@ -413,12 +388,14 @@ input[type="radio"] {
 @media (max-width: 768px) {
   .tableForm {
     padding: 24px 18px;
+    padding-top: 20px;
   }
 
   .inputsContainer {
     gap: 10px;
   }
 }
+
 
 /* ===============================
    ALL PRODUCTS SECTION
@@ -598,183 +575,92 @@ input[type="radio"] {
    RESPONSIVE
 ================================ */
 
+/* Tablets and small laptops */
 @media (max-width: 1024px) {
   .product-table {
-    min-width: 30%;
+    min-width: 100%;            /* ✅ table fits screen */
+    max-width: 100%;
   }
 
   .product-table th,
   .product-table td {
-    font-size: 10px;
-    padding: 10px 0;
-  }
-.Allimagesection{
-  width: 10px;
-  height: 50px;
-}
-.product-table button {
- 
-  border: none;
-  padding: 2px 5px;
-  border-radius: 2px;
-  margin-left: 10px;
-
-}
-}
-@media (max-width: 344px){
-
-  .allProductSection {
-    padding: 20px 0;
-    padding-top: 80px;
-    gap:50px;
+    font-size: 12px;
+    padding: 8px 4px;
   }
 
-.product-table tr {
-    border-bottom: 1px solid rgba(255,255,255,0.25);
-  }
-
-  .product-table td {
-    border-bottom: none;
-  }
-  .product-table {
-    min-width: 200px;   /* 👈 smaller but scrollable */
-    max-width: 500px;
-    height: 500px;
-    gap:10px;
-  }
-
-  /* Reduce cell size */
-  .product-table th,
-  .product-table td {
-    font-size: 16px;
-    padding: 50px 17px;
-  }
-
-  /* Images smaller */
   .product-table img {
-    margin-top: -10px;
-    margin-left: -20px;
+    width: 70px;
+    height: 70px;
   }
 
-  /* Buttons usable on touch */
   .product-table button {
     padding: 6px 8px;
-    font-size: 14px;
+    font-size: 12px;
     border-radius: 4px;
+    margin-left: 6px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .allProductSection {
+    padding: 12px 0;
+    padding-top: 60px;
+  }
+
+  .product-table {
+    min-width: 280px;           /* ✅ scrollable horizontally */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .product-table th,
+  .product-table td {
+    font-size: 12px;
+    padding: 12px 6px;
+  }
+
+  .product-table img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .product-table button {
+    padding: 5px 6px;
+    font-size: 12px;
     margin-left: 4px;
   }
 }
 
-
-/* ===============================
-   USER DETAILS
-================================ */
-
-.userSection {
-  width: 100%;
-  min-height: 100vh;
-  padding: 30px 50px;
-  background: linear-gradient(135deg, #eef2f7, #e5ecf4);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.userCard {
-  background: #fff;
-  width: 100%;
-  max-width: 550px;
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  text-align: center;
-}
-
-/* ===============================
-   RESTAURANT IMAGE
-================================ */
-
-.restaurantImage {
-  margin-bottom: 20px;
-}
-
-.restaurantImage img {
-  width: 400px;
-  height: 300px;
-  border-radius: 10%;
-  object-fit: cover;
-  border: 4px solid #324944;
-}
-
-.noImage {
-  color: #888;
-  font-size: 14px;
-}
-
-/* ===============================
-   USER ROWS
-================================ */
-
-.userRow {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  font-size: 16px;
-  border-bottom: 1px solid #eee;
-}
-
-.userRow span {
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.userRow p {
-  margin: 0;
-  color: #34495e;
-}
-
-@media (max-width: 768px) {
-
-  .userSection {
-    padding: 20px 15px;
-    align-items: flex-start;
+/* Extra small devices (≤344px) */
+@media (max-width: 344px) {
+  .allProductSection {
+    padding: 16px 0;
+    padding-top: 70px;
+    gap: 30px;
   }
 
-  .userCard {
-    padding: 20px;
-    border-radius: 12px;
+  .product-table {
+    min-width: 220px;           /* ✅ smaller but scrollable */
+    max-width: 100%;
+    height: auto;
   }
 
-  /* Restaurant Image */
-  .restaurantImage img {
-    width: 100%;
-    height: 300px;
-    border-radius: 12px;
+  .product-table th,
+  .product-table td {
+    font-size: 11px;
+    padding: 10px 4px;
   }
 
-  /* User Rows */
-  .userRow {
-    flex-direction: row;      /* 🔥 stack label & value */
-    align-items: flex-start;
-    gap: 4px;
-    font-size: 14px;
+  .product-table img {
+    width: 50px;
+    height: 50px;
   }
 
-  .userRow span {
-    font-size: 14px;
-  }
-
-  .userRow p {
-    font-size: 14px;
-  }
-}
-@media (max-width: 768px) {
-  .collectionSection > .sideBarSection {
-    display: none !important;
-  }
-
-  .collectionSection > .sideBarSection.open {
-    top: 12%;
-    width: 344px;
+  .product-table button {
+    padding: 4px 6px;
+    font-size: 11px;
+    border-radius: 3px;
+    margin-left: 2px;
   }
 }
