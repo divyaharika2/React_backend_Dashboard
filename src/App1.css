@@ -427,14 +427,12 @@ input[type="radio"] {
 .allProductSection {
   width: 100%;
   min-height: 100vh;
-  padding: 40px 0;
-
   background: rgb(206, 210, 212);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000;
   font-weight: 500;
 
-  padding-top: 100px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -548,12 +546,12 @@ input[type="radio"] {
   color: #fff;
 
   border: none;
-  padding: 10px 16px;
+  padding: 15px 15px;
   border-radius: 6px;
-
+  margin-left: 13px;
   cursor: pointer;
   font-weight: 600;
-
+  font-size: 15px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -623,8 +621,77 @@ input[type="radio"] {
   margin-left: 10px;
 
 }
+}
+@media (max-width: 768px) {
+
+  .allProductSection {
+    padding: 20px 0;
+    padding-top: 80px;
+    gap:50px;
+  }
+
+.product-table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .product-table td {
+    border-bottom: none;
+  }
+  .product-table {
+    min-width: 200px;   /* 👈 smaller but scrollable */
+    max-width: 500px;
+    height: 500px;
+    gap:10px;
+  }
+
+  /* Reduce cell size */
+  .product-table th,
+  .product-table td {
+    font-size: 16px;
+    padding: 50px 17px;
+  }
+
+  /* Images smaller */
+  .product-table img {
+    margin-top: -10px;
+  }
+
+  /* Buttons usable on touch */
+  .product-table button {
+    padding: 6px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
 
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .product-table {
+    min-width: 700px;
+  }
+
+  .product-table th,
+  .product-table td {
+    font-size: 14px;
+    padding: 12px 9px;
+    gap:70px;
+  }
+
+  .product-table img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .product-table button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .product-table tbody {
+    max-height: 300px;
+  }
+}
+
 
 
 /* ===============================
@@ -693,3 +760,40 @@ input[type="radio"] {
   margin: 0;
   color: #34495e;
 }
+
+@media (max-width: 768px) {
+
+  .userSection {
+    padding: 20px 15px;
+    align-items: flex-start;
+  }
+
+  .userCard {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  /* Restaurant Image */
+  .restaurantImage img {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+  }
+
+  /* User Rows */
+  .userRow {
+    flex-direction: row;      /* 🔥 stack label & value */
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .userRow span {
+    font-size: 14px;
+  }
+
+  .userRow p {
+    font-size: 14px;
+  }
+}
+

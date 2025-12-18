@@ -13,10 +13,16 @@ const LandingPage = () => {
   const [view, setView] = useState("welcome");
   const [showLogOut, setShowLogOut] = useState(false);
   const [showFirmTitle, setShowFirmTitle] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(false);
+
 
   /* ===============================
      INITIAL LOAD (SAFE CHECK)
   =============================== */
+  useEffect(() => {
+    console.log("Sidebar open:", showSidebar);
+  }, [showSidebar]);
+
   useEffect(() => {
     const loginToken = localStorage.getItem("loginToken");
     const firmId = localStorage.getItem("firmId");
@@ -105,16 +111,20 @@ const LandingPage = () => {
         showRegisterHandler={showRegisterHandler}
         showLogOut={showLogOut}
         logOutHandler={logOutHandler}
+        onMenuClick={() => setShowSidebar(!showSidebar)}
       />
 
       <div className="collectionSection">
         <SideBar
+          isOpen={showSidebar}
           showFirmHandler={showFirmHandler}
           showProductHandler={showProductHandler}
           showAllProductsHandler={showAllProductsHandler}
           showUserHandler={showUserHandler}
           showFirmTitle={showFirmTitle}
         />
+
+
 
         {view === "welcome" && <Welcome />}
         {view === "login" && <Login showWelcomeHandler={showWelcomeHandler} />}
