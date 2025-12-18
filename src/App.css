@@ -191,39 +191,59 @@ html, body {
   font-size: 10px;
 }
 }
-/* Force Firmname to next line (column) on small screens */
-@media (max-width: 768px) {
+/* ===============================
+   EXTRA SMALL DEVICES (≤ 344px)
+================================ */
+@media (max-width: 344px) {
+
   .navSection {
-    flex-wrap: wrap !important;
+    display: flex;
+    flex-wrap: wrap;        /* allow second row */
+    align-items: center;
+    row-gap: 10px;
   }
 
-  .Firmname {
-    flex-basis: 100% !important;   /* 🔥 forces new row */
-    order: 2 !important;
-    display: flex;
-    justify-content: center;
+  /* First row */
+  .threeDots {
+    order: 1;
   }
 
   .company {
-    order: 1 !important;
+    order: 2;
+    font-size: 15px;
+    margin-left: 90px;
   }
 
   .userAuth {
-    order: 1 !important;
+    order: 1;    /* push login/register right */
+    font-size: 12px;
+    margin-right: -20px;
+  }
+
+  /* Second row: Restaurant name */
+  .Firmname {
+    order: 2;
+    flex-basis: 100%;      /* 🔥 force new line */
+    margin-top: 4px;
+    display: flex;
+    justify-content:center;
   }
 
   .Firmname h4 {
-    font-size: 12px;
-    white-space: normal !important;
-    margin-top: 4px;
-    display: flex;
-    justify-content: center;
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .collectionSection > .sideBarSection {
+    display: none !important;
+  }
+
+  .collectionSection > .sideBarSection.open {
+    top: 20%;
+   
   }
 }
-
-
-
-
 
 
 /* ***********SIDE_BAR*********** */
